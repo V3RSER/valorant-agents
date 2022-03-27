@@ -13,7 +13,7 @@ const CharacterList = (props) => {
 
   return (
     <>
-      <div className="d-grid bg-light p-3">
+      <div className="character-list">
         {props.result.characterList.map((character, index) => (
           <CharacterCard
             image={character.displayIcon}

@@ -1,4 +1,4 @@
-import { characterType } from "../constants/characterActionType";
+import { characterType } from "../types/characterActionType";
 
 const INITIAL_STATE = {
   characterList: [],

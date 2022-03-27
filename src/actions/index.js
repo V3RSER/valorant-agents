@@ -1,5 +1,5 @@
-import { characterType } from "../constants/characterActionType";
-import { viewType } from "../constants/viewActionType";
+import { characterType } from "../types/characterActionType";
+import { viewType } from "../types/viewActionType";
 
 import axios from "../services/config";
 

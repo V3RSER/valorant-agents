@@ -7,6 +7,7 @@ import { createLogger } from "redux-logger";
 import reducer from "./reducers";
 import App from "./App";
 import { composeWithDevTools } from "redux-devtools-extension";
+import './css/styless.css';
 
 const middleware = [thunk];
 if (process.env.NODE_ENV !== "production") {

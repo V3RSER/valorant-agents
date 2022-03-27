@@ -1,4 +1,4 @@
-import { viewType } from "../constants/viewActionType";
+import { viewType } from "../types/viewActionType";
 
 const INITIAL_STATE = {
   loading: false,
