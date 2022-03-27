@@ -1,15 +1,15 @@
-import { view as ViewTypes } from "../constants/viewActionTypes";
+import { viewType } from "../constants/viewActionType";
 
 const INITIAL_STATE = {
   loading: false,
 };
 
-export default (state = INITIAL_STATE, action) => {
+export default function reducerView(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case ViewTypes.LOADING: {
+    case viewType.LOADING: {
       return { loading: true };
     }
-    case ViewTypes.LOADED: {
+    case viewType.LOADED: {
       return { loading: false };
     }
     default:

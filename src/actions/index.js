@@ -1,16 +1,21 @@
-import { character as CharacterTypes } from "../constants/characterActionTypes";
-import { view as ViewTypes } from "../constants/viewActionTypes";
+import { characterType } from "../constants/characterActionType";
+import { viewType } from "../constants/viewActionType";
 
 import axios from "../services/config";
 
-export const getCharacters = () => async (dispatch) => {
-  dispatch({ type: ViewTypes.LOADING });
+export const setCharacterList = () => async (dispatch) => {
+  dispatch({ type: viewType.LOADING });
 
   try {
-    await axios.get("/agents?language=es-ES&&isPlayableCharacter=true").then(function (response) {
-      dispatch({ type: CharacterTypes.RESPONSE, data: response.data.data });
-      dispatch({ type: ViewTypes.LOADED });
-    });
+    await axios
+      .get("/agents?language=es-ES&&isPlayableCharacter=true")
+      .then(function (response) {
+        dispatch({
+          type: characterType.SET_LIST,
+          payload: response.data.data,
+        });
+        dispatch({ type: viewType.LOADED });
+      });
   } catch (error) {
     console.error(error);
   }

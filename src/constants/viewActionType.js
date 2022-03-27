@@ -1,8 +1,6 @@
-export const view = {
+export const viewType = {
   LOADING: "view/LOADING",
   LOADED: "view/LOADED",
 };
 
-export default {
-  view,
-};
+export default viewType;

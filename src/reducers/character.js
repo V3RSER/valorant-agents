@@ -1,15 +1,15 @@
-import { character as CharacterTypes } from "../constants/characterActionTypes";
+import { characterType } from "../constants/characterActionType";
 
 const INITIAL_STATE = {
-  response: [],
+  characterList: [],
 };
 
-export default (state = INITIAL_STATE, action) => {
+export default function reducerCharacter(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case CharacterTypes.RESPONSE: {
-      return { response: action.data };
+    case characterType.SET_LIST: {
+      return { ...state, characterList: action.payload };
     }
     default:
       return state;
   }
-};
+}
