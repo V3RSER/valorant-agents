@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/valorant-agents/static/css/main.699ea934.css",
-    "main.js": "/valorant-agents/static/js/main.17054536.js",
+    "main.js": "/valorant-agents/static/js/main.decc88d8.js",
     "index.html": "/valorant-agents/index.html",
     "main.699ea934.css.map": "/valorant-agents/static/css/main.699ea934.css.map",
-    "main.17054536.js.map": "/valorant-agents/static/js/main.17054536.js.map"
+    "main.decc88d8.js.map": "/valorant-agents/static/js/main.decc88d8.js.map"
   },
   "entrypoints": [
     "static/css/main.699ea934.css",
-    "static/js/main.17054536.js"
+    "static/js/main.decc88d8.js"
   ]
 }
