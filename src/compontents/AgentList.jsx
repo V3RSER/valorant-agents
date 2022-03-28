@@ -3,6 +3,7 @@ import AgentCard from "./AgentCard";
 
 
 const AgentList = (agents) => {
+  console.log(agents)
   return (
     <div className="agent-list">
       {agents.agents?.map((agent, index) => (

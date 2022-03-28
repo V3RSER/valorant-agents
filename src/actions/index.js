@@ -49,4 +49,12 @@ export const changeFavorite = (id) => async (dispatch) => {
   });
 };
 
+export const setAgentListByName = (name) => async (dispatch) => {
+  dispatch({
+    type: agentType.SET_LIST_BY_NAME,
+    name: name,
+  });
+};
+
+
 

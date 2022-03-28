@@ -12,14 +12,8 @@ const AgentListRole = (props) => {
       dispatch(setAgentList());
     }
   }, [dispatch, props.data.agentList]);
-  
-  return (
-    <AgentList
-      agents={props.data.agentList.filter((agent) =>
-        agent.uuid.includes(props.data?.favorites)
-      )}
-    />
-  );
+
+  return <AgentList agents={props.data.favorites} />;
 };
 
 const stateMapToPros = (state) => {
