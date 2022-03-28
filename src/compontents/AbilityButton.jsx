@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { setAbility } from "../actions";
 
 const AbilityInfo = ({ icon, name, ability }) => {
-  const dispatch = useDispatch();
+  let dispatch = useDispatch();
   return (
     <li className="ability-button" onClick={() => dispatch(setAbility(ability))}>
       <img

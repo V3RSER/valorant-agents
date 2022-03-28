@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { setAgentList } from "../actions";
 
 const AgentList = (props) => {
-  const dispatch = useDispatch();
+  let dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(setAgentList());
@@ -16,6 +16,7 @@ const AgentList = (props) => {
       <div className="agent-list">
         {props.data.agentList.map((agent, index) => (
           <AgentCard
+            id={agent.uuid}
             image={agent.displayIcon}
             name={agent.displayName}
             role={{
