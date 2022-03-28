@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/valorant-agents/static/css/main.699ea934.css",
+    "main.js": "/valorant-agents/static/js/main.f695e3aa.js",
+    "index.html": "/valorant-agents/index.html",
+    "main.699ea934.css.map": "/valorant-agents/static/css/main.699ea934.css.map",
+    "main.f695e3aa.js.map": "/valorant-agents/static/js/main.f695e3aa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.699ea934.css",
+    "static/js/main.f695e3aa.js"
+  ]
+}
