@@ -9,7 +9,7 @@ const AgentCard = ({ favorites, id, image, name, role }) => {
   let dispatch = useDispatch();
 
   const handleClickAgent = () => {
-    navigate(`/agent/${id}`);
+    navigate(`/valorant-agents/agent/${id}`);
   };
 
   const handleClickFavorite = () => {
