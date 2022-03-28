@@ -8,26 +8,26 @@ const AgentList = (props) => {
   let dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setAgentList());
-  }, [dispatch]);
+    if (!props.agentList?.length) {
+      dispatch(setAgentList());
+    }
+  }, [dispatch, props.agentList]);
 
   return (
-    <>
-      <div className="agent-list">
-        {props.data.agentList.map((agent, index) => (
-          <AgentCard
-            id={agent.uuid}
-            image={agent.displayIcon}
-            name={agent.displayName}
-            role={{
-              name: agent.role.displayName,
-              icon: agent.role.displayIcon,
-            }}
-            key={index}
-          ></AgentCard>
-        ))}
-      </div>
-    </>
+    <div className="agent-list">
+      {props.data.agentList.map((agent, index) => (
+        <AgentCard
+          id={agent.uuid}
+          image={agent.displayIcon}
+          name={agent.displayName}
+          role={{
+            name: agent.role.displayName,
+            icon: agent.role.displayIcon,
+          }}
+          key={index}
+        ></AgentCard>
+      ))}
+    </div>
   );
 };
 

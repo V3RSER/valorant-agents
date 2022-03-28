@@ -13,7 +13,6 @@ const AgentCard = ({ id, image, name, role }) => {
       <img
         onClick={() => handleClick()}
         className="image"
-        loading="lazy"
         src={image}
         alt={name}
       ></img>
@@ -21,7 +20,7 @@ const AgentCard = ({ id, image, name, role }) => {
         <h2 onClick={() => handleClick()}>{name.toUpperCase()}</h2>
       </div>
       <div className="role">
-        <img loading="lazy" src={role.icon} alt={role.name}></img>
+        <img src={role.icon} alt={role.name}></img>
         <h3>{role.name}</h3>
       </div>
     </div>

@@ -12,7 +12,7 @@ const AgentPage = (props) => {
 
   useEffect(() => {
     dispatch(setAgent(params.id));
-  }, [dispatch]);
+  }, [dispatch, params.id]);
 
   return (
     <div className="agent-page">

@@ -7,8 +7,7 @@ export const setAgentList = () => async (dispatch) => {
   dispatch({ type: viewType.LOADING });
 
   try {
-    await agentServices.getAgentList()
-    .then(function (response) {
+    await agentServices.getAgentList().then(function (response) {
       dispatch({
         type: agentType.SET_LIST,
         payload: response.data.data,

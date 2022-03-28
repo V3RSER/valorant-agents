@@ -1,0 +1,50 @@
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import AgentCard from "./AgentCard";
+import { useDispatch } from "react-redux";
+import { setAgentList } from "../actions";
+import { useParams } from "react-router-dom";
+
+const AgentListRole = (props) => {
+  let params = useParams();
+  let dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!props.agentList?.length) {
+      dispatch(setAgentList());
+    }
+  }, [dispatch, props.agentList]);
+
+  return (
+    <div className="agent-list">
+      {props.data.agentList
+        .filter(
+          (agent) =>
+            agent.role.displayName.toLowerCase() === params.role.toLowerCase()
+        )
+        .map((agent, index) => (
+          <AgentCard
+            id={agent.uuid}
+            image={agent.displayIcon}
+            name={agent.displayName}
+            role={{
+              name: agent.role.displayName,
+              icon: agent.role.displayIcon,
+            }}
+            key={index}
+          ></AgentCard>
+        ))}
+    </div>
+  );
+};
+
+const stateMapToPros = (state) => {
+  return {
+    data: {
+      loading: state.view.loading,
+      agentList: state.agent.agentList,
+    },
+  };
+};
+
+export default connect(stateMapToPros)(AgentListRole);
