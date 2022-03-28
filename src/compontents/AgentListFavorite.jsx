@@ -3,10 +3,8 @@ import { connect } from "react-redux";
 import AgentList from "./AgentList";
 import { useDispatch } from "react-redux";
 import { setAgentList } from "../actions";
-import { useParams } from "react-router-dom";
 
 const AgentListRole = (props) => {
-  let params = useParams();
   let dispatch = useDispatch();
 
   useEffect(() => {
@@ -14,11 +12,11 @@ const AgentListRole = (props) => {
       dispatch(setAgentList());
     }
   }, [dispatch, props.data.agentList]);
+  
   return (
     <AgentList
-      agents={props.data.agentList.filter(
-        (agent) =>
-          agent.role.displayName.toLowerCase() === params.role.toLowerCase()
+      agents={props.data.agentList.filter((agent) =>
+        agent.uuid.includes(props.data?.favorites)
       )}
     />
   );
@@ -29,6 +27,7 @@ const stateMapToPros = (state) => {
     data: {
       loading: state.view.loading,
       agentList: state.agent.agentList,
+      favorites: state.agent.favorites,
     },
   };
 };

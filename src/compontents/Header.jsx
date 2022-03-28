@@ -1,10 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  let navigate = useNavigate();
+
+  const handleClickFavorite = () => {
+    navigate("/favorites");
+  };
+
   return (
     <header className="header">
-      <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
         <button
           className="navbar-toggler"
           type="button"
@@ -47,7 +54,14 @@ const Header = () => {
               </NavLink>
             </li>
           </ul>
-          <form className="form-inline mt-2 mt-md-0">
+          <button
+              className="btn btn-danger my-1 mr-5 "
+              onClick={() => handleClickFavorite()}
+            >
+              Favoritos
+            </button>
+
+          <form className="form-inline my-1">
             <input
               className="form-control mr-sm-2"
               type="text"
@@ -55,11 +69,12 @@ const Header = () => {
               aria-label="Buscar"
             ></input>
             <button
-              className="btn btn-outline-success my-2 my-sm-0"
+              className="btn btn-success my-2 my-sm-0"
               type="submit"
             >
               Buscar
             </button>
+            
           </form>
         </div>
       </nav>

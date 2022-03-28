@@ -1,30 +1,49 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { changeFavorite } from "../actions";
+import { connect } from "react-redux";
 
-const AgentCard = ({ id, image, name, role }) => {
+const AgentCard = ({ favorites, id, image, name, role }) => {
   let navigate = useNavigate();
+  let dispatch = useDispatch();
 
-  const handleClick = () => {
+  const handleClickAgent = () => {
     navigate(`/agent/${id}`);
   };
 
+  const handleClickFavorite = () => {
+    dispatch(changeFavorite(id, favorites));
+  };
   return (
     <div className="agent-card">
       <img
-        onClick={() => handleClick()}
+        onClick={() => handleClickAgent()}
         className="image"
         src={image}
         alt={name}
       ></img>
       <div className="name">
-        <h2 onClick={() => handleClick()}>{name.toUpperCase()}</h2>
+        <h3 onClick={() => handleClickAgent()}>{name.toUpperCase()}</h3>
+        <button
+          className={"btn " + true ? "btn-light" : "btn-danger"}
+          onClick={() => handleClickFavorite()}
+        >
+          ❤
+        </button>
       </div>
       <div className="role">
         <img src={role.icon} alt={role.name}></img>
-        <h3>{role.name}</h3>
+        <h4>{role.name}</h4>
       </div>
     </div>
   );
 };
 
-export default AgentCard;
+const stateMapToPros = (state) => {
+  return {
+      favorites: state.agent.favorites,
+  };
+};
+
+export default connect(stateMapToPros)(AgentCard);

@@ -3,25 +3,17 @@ import { connect } from "react-redux";
 import AgentList from "./AgentList";
 import { useDispatch } from "react-redux";
 import { setAgentList } from "../actions";
-import { useParams } from "react-router-dom";
 
-const AgentListRole = (props) => {
-  let params = useParams();
+const AgentListHome = (props) => {
   let dispatch = useDispatch();
-
+  
   useEffect(() => {
     if (!props.data.agentList?.length) {
       dispatch(setAgentList());
     }
   }, [dispatch, props.data.agentList]);
-  return (
-    <AgentList
-      agents={props.data.agentList.filter(
-        (agent) =>
-          agent.role.displayName.toLowerCase() === params.role.toLowerCase()
-      )}
-    />
-  );
+
+  return <AgentList agents={props.data.agentList} />;
 };
 
 const stateMapToPros = (state) => {
@@ -33,4 +25,4 @@ const stateMapToPros = (state) => {
   };
 };
 
-export default connect(stateMapToPros)(AgentListRole);
+export default connect(stateMapToPros)(AgentListHome);

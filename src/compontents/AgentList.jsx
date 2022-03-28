@@ -1,21 +1,11 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
+
 import AgentCard from "./AgentCard";
-import { useDispatch } from "react-redux";
-import { setAgentList } from "../actions";
 
-const AgentList = (props) => {
-  let dispatch = useDispatch();
 
-  useEffect(() => {
-    if (!props.agentList?.length) {
-      dispatch(setAgentList());
-    }
-  }, [dispatch, props.agentList]);
-
+const AgentList = (agents) => {
   return (
     <div className="agent-list">
-      {props.data.agentList.map((agent, index) => (
+      {agents.agents?.map((agent, index) => (
         <AgentCard
           id={agent.uuid}
           image={agent.displayIcon}
@@ -31,13 +21,4 @@ const AgentList = (props) => {
   );
 };
 
-const stateMapToPros = (state) => {
-  return {
-    data: {
-      loading: state.view.loading,
-      agentList: state.agent.agentList,
-    },
-  };
-};
-
-export default connect(stateMapToPros)(AgentList);
+export default AgentList;

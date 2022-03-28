@@ -41,3 +41,12 @@ export const setAbility = (ability) => async (dispatch) => {
     ability: ability,
   });
 };
+
+export const changeFavorite = (id) => async (dispatch) => {
+  dispatch({
+    type: agentType.CHANGE_FAVORITE,
+    id: id,
+  });
+};
+
+
