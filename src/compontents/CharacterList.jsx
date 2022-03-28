@@ -14,7 +14,7 @@ const CharacterList = (props) => {
   return (
     <>
       <div className="character-list">
-        {props.result.characterList.map((character, index) => (
+        {props.data.characterList.map((character, index) => (
           <CharacterCard
             image={character.displayIcon}
             name={character.displayName}
@@ -32,7 +32,7 @@ const CharacterList = (props) => {
 
 const stateMapToPros = (state) => {
   return {
-    result: {
+    data: {
       loading: state.view.loading,
       characterList: state.character.characterList,
     },

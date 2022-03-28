@@ -1,3 +1,57 @@
+.ability-button {
+  border: 1px solid #000000;
+  background: #c9c9c9;
+  height: 4rem;
+  width: 4rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: pointer; }
+  .ability-button img {
+    height: 2.5rem;
+    width: 2.5rem;
+    filter: brightness(0); }
+
+.ability-button:not(:last-of-type) {
+  margin-right: 2rem; }
+
+.ability-info {
+  text-align: justify;
+  box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.03);
+  border: 1px solid #000000; }
+  .ability-info .image {
+    cursor: pointer;
+    width: 100%;
+    height: 256px;
+    object-fit: cover;
+    vertical-align: top;
+    border-radius: 5px 5px 0 0; }
+  .ability-info .name {
+    border-radius: 0 0 5px 5px;
+    padding: .50rem;
+    justify-content: center;
+    align-items: center;
+    display: flex; }
+    .ability-info .name img {
+      width: 30px;
+      height: 30px; }
+    .ability-info .name h4 {
+      margin-bottom: 0;
+      padding-left: 0.5rem; }
+  .ability-info p {
+    padding: 1rem;
+    border-top: 1px solid;
+    margin: 0; }
+
+.abilities {
+  margin: 2rem 0;
+  justify-content: center;
+  display: flex;
+  padding: 0;
+  list-style: none; }
+
 .character-card {
   text-align: center;
   border-radius: 5px;
