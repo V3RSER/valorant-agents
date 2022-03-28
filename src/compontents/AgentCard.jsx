@@ -1,8 +1,8 @@
 import React from "react";
 
-const CharacterCard = ({ image, name, role }) => {
+const AgentCard = ({ image, name, role }) => {
   return (
-    <div className="character-card">
+    <div className="agent-card">
       <img className="image" loading="lazy" src={image} alt={name}></img>
       <div className="name">
         <h2>{name.toUpperCase()}</h2>
@@ -15,4 +15,4 @@ const CharacterCard = ({ image, name, role }) => {
   );
 };
 
-export default CharacterCard;
+export default AgentCard;

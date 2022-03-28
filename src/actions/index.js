@@ -1,16 +1,16 @@
-import { characterType } from "../types/characterActionType";
+import { agentType } from "../types/agentActionType";
 import { viewType } from "../types/viewActionType";
 
-import { default as characterServices } from "../services/characterStreaming/index";
+import { default as agentServices } from "../services/agentStreaming/index";
 
-export const setCharacterList = () => async (dispatch) => {
+export const setAgentList = () => async (dispatch) => {
   dispatch({ type: viewType.LOADING });
 
   try {
-    await characterServices.getCharacterList()
+    await agentServices.getAgentList()
     .then(function (response) {
       dispatch({
-        type: characterType.SET_LIST,
+        type: agentType.SET_LIST,
         payload: response.data.data,
       });
       dispatch({ type: viewType.LOADED });
@@ -20,13 +20,13 @@ export const setCharacterList = () => async (dispatch) => {
   }
 };
 
-export const setCharacter = (id) => async (dispatch) => {
+export const setAgent = (id) => async (dispatch) => {
   dispatch({ type: viewType.LOADING });
   try {
-    await characterServices.getCharacter(id)
+    await agentServices.getAgent(id)
     .then(function (response) {
       dispatch({
-        type: characterType.SET,
+        type: agentType.SET,
         payload: response.data.data,
       });
       dispatch({ type: viewType.LOADED });
@@ -38,7 +38,7 @@ export const setCharacter = (id) => async (dispatch) => {
 
 export const setAbility = (ability) => async (dispatch) => {
   dispatch({
-    type: characterType.SET_ABILITY,
+    type: agentType.SET_ABILITY,
     ability: ability,
   });
 };

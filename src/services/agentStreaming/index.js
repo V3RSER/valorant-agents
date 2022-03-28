@@ -1,14 +1,14 @@
 import axios from "../config";
 
-export const characterStreamingServices = () => {
-  const getCharacterList = () => {
+export const agentStreamingServices = () => {
+  const getAgentList = () => {
     return axios({
       method: "GET",
       url: "/agents?language=es-ES&&isPlayableCharacter=true",
     });
   };
 
-  const getCharacter = (id) => {
+  const getAgent = (id) => {
     return axios({
       method: "GET",
       url: "/agents/" + id + "?language=es-ES",
@@ -16,9 +16,9 @@ export const characterStreamingServices = () => {
   };
 
   return {
-    getCharacterList,
-    getCharacter,
+    getAgentList,
+    getAgent,
   };
 };
 
-export default characterStreamingServices();
+export default agentStreamingServices();

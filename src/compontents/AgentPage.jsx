@@ -1,38 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setCharacter } from "../actions";
+import { setAgent } from "../actions";
 import AbilityInfo from "./AbilityInfo";
 import AbilityButton from "./AbilityButton";
 
-const CharacterPage = (props) => {
+const AgentPage = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setCharacter("5f8d3a7f-467b-97f3-062c-13acf203c006"));
+    dispatch(setAgent("5f8d3a7f-467b-97f3-062c-13acf203c006"));
   }, [dispatch]);
 
   return (
-    <div className="character-page">
+    <div className="agent-page">
       <div className="row">
         <div className="col-md-6 py-5">
-          <h1 className="text-center">{props.data.character.displayName?.toUpperCase()}</h1>
+          <h1 className="text-center">{props.data.agent.displayName?.toUpperCase()}</h1>
           <img
             className="img-fluid"
-            src={props.data.character.fullPortraitV2}
+            src={props.data.agent.fullPortraitV2}
             alt="portrait"
-          ></img>
-          <img
-            className="background"
-            src={props.data.character.background}
-            alt="background"
           ></img>
         </div>
         <div className="col-md-6 py-5">
         
         <h2 className="text-center">HABILIDADES</h2>
           <ul className="abilities">
-            {props.data.character.abilities.map((a, index) => (
+            {props.data.agent.abilities.map((a, index) => (
               <AbilityButton
                 key={index}
                 icon={a.displayIcon}
@@ -41,7 +36,7 @@ const CharacterPage = (props) => {
               />
             ))}
           </ul>
-          {props.data.character.abilities
+          {props.data.agent.abilities
             .filter((a) => a.slot === props.data.ability)
             .map((a, index) => (
               <AbilityInfo
@@ -61,10 +56,10 @@ const stateMapToPros = (state) => {
   return {
     data: {
       loading: state.view.loading,
-      character: state.character.character,
-      ability: state.character.ability,
+      agent: state.agent.agent,
+      ability: state.agent.ability,
     },
   };
 };
 
-export default connect(stateMapToPros)(CharacterPage);
+export default connect(stateMapToPros)(AgentPage);

@@ -1,11 +1,11 @@
-import CharacterList from "./compontents/CharacterList";
-import CharacterPage from "./compontents/CharacterPage";
+import AgentList from "./compontents/AgentList";
+import AgentPage from "./compontents/AgentPage";
 
 function App() {
   return (
     <div className="container">
-      <CharacterList />
-        <CharacterPage />
+      <AgentList />
+      <AgentPage />
     </div>
   );
 }

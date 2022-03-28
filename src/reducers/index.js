@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 
-import { default as character } from "./character";
+import { default as agent } from "./agent";
 import { default as view } from "./view";
 
 export default combineReducers({
-  character,
+  agent,
   view,
 });
