@@ -6,7 +6,7 @@ const Header = () => {
   let navigate = useNavigate();
 
   const handleClickFavorite = () => {
-    navigate("/favorites");
+    navigate("/valorant-agents/favorites");
   };
 
   return (
@@ -29,27 +29,27 @@ const Header = () => {
         >
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/">
+              <NavLink className="nav-link" to="/valorant-agents/">
                 Agentes
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/role/iniciador">
+              <NavLink className="nav-link" to="/valorant-agents/role/iniciador">
                 Iniciador
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/role/duelista">
+              <NavLink className="nav-link" to="/valorant-agents/role/duelista">
                 Duelista
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/role/centinela">
+              <NavLink className="nav-link" to="/valorant-agents/role/centinela">
                 Centinela
               </NavLink>
             </li>{" "}
             <li className="nav-item ">
-              <NavLink className="nav-link" to="/role/controlador">
+              <NavLink className="nav-link" to="/valorant-agents/role/controlador">
                 Controlador
               </NavLink>
             </li>

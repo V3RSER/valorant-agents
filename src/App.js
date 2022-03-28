@@ -12,10 +12,10 @@ function App() {
         <Header />
         <div className="container">
           <Routes>
-            <Route path="/" element={<AgentListHome />} />
-            <Route path="/role/:role" element={<AgentListRole />} />
-            <Route path="/favorites" element={<AgentListFavorite />} />
-            <Route path="/agent/:id" element={<AgentPage />} />
+            <Route path="/valorant-agents/" element={<AgentListHome />} />
+            <Route path="/valorant-agents/role/:role" element={<AgentListRole />} />
+            <Route path="/valorant-agents/favorites" element={<AgentListFavorite />} />
+            <Route path="/valorant-agents/agent/:id" element={<AgentPage />} />
           </Routes>
         </div>
       </BrowserRouter>
